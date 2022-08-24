@@ -9,24 +9,30 @@ const slides = [
 ]
 
 const app = new Vue({
-    el: '#root',
+	el: '#root',
 	data: {
 		slides,
 		index: 0,
 
 	},
-	methods:{
+	methods: {
 		prevSlide() {
-			
-		},
-		nextSlide(){
-			if (this.index === this.slides.length - 1) {
-				this.index = 0} else {
-					this.index++
-				}
+			if (this.index === 0) {
+				this.index = this.slides.length - 1
+			} else {
+				this.index--
+			}
 
-			
+		},
+		nextSlide() {
+			if (this.index === this.slides.length - 1) {
+				this.index = 0
+			} else {
+				this.index++
+			}
+
+
 		}
 	}
-    
+
 })
