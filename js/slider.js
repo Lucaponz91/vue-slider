@@ -13,6 +13,7 @@ const app = new Vue({
 	data: {
 		slides,
 		index: 0,
+		autoSlide: ''
 
 	},
 	methods: {
@@ -22,7 +23,6 @@ const app = new Vue({
 			} else {
 				this.index--
 			}
-
 		},
 		nextSlide() {
 			if (this.index === this.slides.length - 1) {
@@ -30,9 +30,14 @@ const app = new Vue({
 			} else {
 				this.index++
 			}
-
+		},
+		autoNext(){
+			this.autoslide = setInterval(this.nextSlide, 3000);
 
 		}
+	},
+	mounted: function () {
+		this.autoNext()
 	}
 
 })
