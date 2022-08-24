@@ -18,6 +18,7 @@ const app = new Vue({
 	},
 	methods: {
 		prevSlide() {
+			// clearInterval(this.autoSlide)
 			if (this.index === 0) {
 				this.index = this.slides.length - 1
 			} else {
@@ -25,6 +26,7 @@ const app = new Vue({
 			}
 		},
 		nextSlide() {
+			// clearInterval(this.autoSlide)
 			if (this.index === this.slides.length - 1) {
 				this.index = 0
 			} else {
@@ -32,8 +34,11 @@ const app = new Vue({
 			}
 		},
 		autoNext(){
-			this.autoslide = setInterval(this.nextSlide, 3000);
+			this.autoSlide = setInterval(this.nextSlide, 1000);
 
+		},
+		pause(){
+			clearInterval(this.autoSlide)
 		}
 	},
 	mounted: function () {
