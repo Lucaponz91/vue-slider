@@ -17,8 +17,10 @@
       <div class="slider">
 
         <ul class="slides-wrapper">
-          <li class="slide active">
-            <img :src="slides[index]" alt="">
+          <li v-for="(slide, indice) in slides" 
+          :class="indice === index ? 'active' : '' "
+          class="slide">
+            <img :src="slide" alt="">
           </li>
           <!-- <li class="slide">
             <img src="./img/02.jpg" alt="">
