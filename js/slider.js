@@ -41,8 +41,8 @@ const app = new Vue({
 			clearInterval(this.autoSlide)
 		}
 	},
-	mounted: function () {
-		this.autoNext()
+	mounted: function() {
+		this.autoNext();
 	}
 
 })
